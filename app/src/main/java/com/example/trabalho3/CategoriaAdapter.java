@@ -58,8 +58,8 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
 
     public ViewHolder(@NonNull final View itemView) {
         super(itemView);
-        itemID = itemView.findViewById(R.id.textIDProducao);
-        itemTitulo = itemView.findViewById(R.id.textTitulo);
+        itemID = itemView.findViewById(R.id.textIDTag);
+        itemTitulo = itemView.findViewById(R.id.textViewTag);
 
         itemView.setOnClickListener(new View.OnClickListener(){
             @Override

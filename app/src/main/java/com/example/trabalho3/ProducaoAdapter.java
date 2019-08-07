@@ -47,6 +47,7 @@ public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHo
         int idxTitulo = cursor.getColumnIndexOrThrow(CurriculoContract.Producao.COLUMN_TITULO);
         int idxDescricao = cursor.getColumnIndexOrThrow(CurriculoContract.Producao.COLUMN_DESCRICAO);
         int idxCategoria = cursor.getColumnIndexOrThrow(CurriculoContract.Producao.COLUMN_CATEGORIA);
+        int idxDtInicio = cursor.getColumnIndexOrThrow(CurriculoContract.Producao.COLUMN_INICIO);
 
         cursor.moveToPosition(position);
 
@@ -54,10 +55,11 @@ public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHo
         holder.itemTitulo.setText(cursor.getString(idxTitulo));
         holder.itemDescricao.setText(cursor.getString(idxDescricao));
         holder.itemCategoria.setText(cursor.getString(idxCategoria));
+        holder.itemInicio.setText(cursor.getString(idxDtInicio));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView itemID, itemTitulo, itemDescricao, itemInicio, itemFim, itemCategoria;
+        public TextView itemID, itemTitulo, itemDescricao, itemInicio, itemCategoria;
 
 
         public ViewHolder(@NonNull final View itemView) {
@@ -66,6 +68,7 @@ public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHo
             itemTitulo = itemView.findViewById(R.id.textTitulo);
             itemDescricao = itemView.findViewById(R.id.textDescricao);
             itemCategoria = itemView.findViewById(R.id.textCategoriaProducao);
+            itemInicio = itemView.findViewById(R.id.textDtInicio);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

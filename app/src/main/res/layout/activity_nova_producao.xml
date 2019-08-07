@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NovaProducaoActivity">
+
+    <TextView
+            android:text="Nova Produção"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14" android:textSize="24sp" android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:text="Título"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView15" android:textSize="18sp"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView16" app:layout_constraintBottom_toTopOf="@+id/textView16"/>
+    <TextView
+            android:text="Descrição"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView16" android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="26dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editTextDescProd" android:layout_marginStart="26dp"/>
+    <TextView
+            android:text="Data Inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView17" android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp" android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextDtInicioProd" android:layout_marginBottom="10dp"/>
+    <TextView
+            android:text="Categoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView18" android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="272dp"/>
+    <Button
+            android:text="Salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSalvarNovaProducao" android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"/>
+    <EditText
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/editTextTituloProd"
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSalvarNovaProducao"/>
+    <EditText
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/editTextDescProd"
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTituloProd"/>
+    <EditText
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/editTextDtInicioProd"
+            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintTop_toBottomOf="@+id/editTextDescProd"
+            android:layout_marginTop="12dp"/>
+    <Spinner
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerCatProd" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="272dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="119dp" android:layout_marginStart="119dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

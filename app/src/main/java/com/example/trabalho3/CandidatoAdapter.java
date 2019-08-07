@@ -22,7 +22,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.View
     public void setOnItemClickListener(CandidatoAdapter.OnItemClickListener listener) { this.listener = listener; }
 
     public interface OnItemClickListener {
-        void onItemClick(View itemView, int position);
+        void onItemClick(View candidatoView, int position);
     }
 
     public void setCursor(Cursor c){
@@ -53,31 +53,33 @@ public class CandidatoAdapter extends RecyclerView.Adapter<CandidatoAdapter.View
         cursor.moveToPosition(position);
 
         holder.itemID.setText(cursor.getString(idxID));
-        holder.itemTitulo.setText(cursor.getString(idxNome));
-        holder.itemDescricao.setText(cursor.getString(idxNascimento));
-        holder.itemInicio.setText(cursor.getString(idxTelefone));
-        holder.itemFim.setText(cursor.getString(idxPerfil));
-        holder.itemCategoria.setText(cursor.getString(idxEmail));
+        holder.itemNome.setText(cursor.getString(idxNome));
+        holder.itemDtNasc.setText(cursor.getString(idxNascimento));
+        holder.itemTelefone.setText(cursor.getString(idxTelefone));
+        holder.itemPerfil.setText(cursor.getString(idxPerfil));
+        holder.itemEmail.setText(cursor.getString(idxEmail));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView itemID, itemTitulo, itemDescricao, itemInicio, itemFim, itemCategoria;
+        public TextView itemID, itemNome, itemDtNasc, itemPerfil, itemTelefone, itemEmail;
 
 
-        public ViewHolder(@NonNull final View itemView) {
-            super(itemView);
-            itemID = itemView.findViewById(R.id.textIDProducao);
-            itemTitulo = itemView.findViewById(R.id.textTitulo);
-            itemDescricao = itemView.findViewById(R.id.textDescricao);
-            itemCategoria = itemView.findViewById(R.id.textCategoriaProducao);
+        public ViewHolder(@NonNull final View candidatoView) {
+            super(candidatoView);
+            itemID = candidatoView.findViewById(R.id.textViewId);
+            itemNome = candidatoView.findViewById(R.id.editNovoNome);
+            itemDtNasc = candidatoView.findViewById(R.id.textViewDtNasc);
+            itemPerfil = candidatoView.findViewById(R.id.textViewPerfil);
+            itemTelefone = candidatoView.findViewById(R.id.textViewTelefone);
+            itemEmail = candidatoView.findViewById(R.id.textViewEmail);
 
-            itemView.setOnClickListener(new View.OnClickListener(){
+            candidatoView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
                     if (listener != null){
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(itemView, position);
+                            listener.onItemClick(candidatoView, position);
                         }
                     }
                 }

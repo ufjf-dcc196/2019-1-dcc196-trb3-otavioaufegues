@@ -9,6 +9,16 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".DetalhesProducaoActivity">
+        </activity>
+        <activity android:name=".NovaProducaoActivity">
+        </activity>
+        <activity android:name=".TagsActivity">
+        </activity>
+        <activity android:name=".DetalhesCandidatoActivity">
+        </activity>
+        <activity android:name=".NovoCandidatoActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
