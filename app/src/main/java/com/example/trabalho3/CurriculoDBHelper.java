@@ -11,7 +11,7 @@ import java.util.List;
 public class CurriculoDBHelper  extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Agenda.db";
+    public static final String DATABASE_NAME = "Agenda.sqLiteDatabase";
 
     public CurriculoDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -40,8 +40,8 @@ public class CurriculoDBHelper  extends SQLiteOpenHelper {
         List<String> list = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + CurriculoContract.Categoria.TABLE_NAME;
 
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()){
             do {
@@ -50,7 +50,7 @@ public class CurriculoDBHelper  extends SQLiteOpenHelper {
         }
 
         cursor.close();
-        db.close();
+//        sqLiteDatabase.close();
 
         return list;
     }
@@ -58,17 +58,15 @@ public class CurriculoDBHelper  extends SQLiteOpenHelper {
     public String getCategoriaID(String cat){
         String selectQuery = "SELECT _ID FROM " + CurriculoContract.Categoria.TABLE_NAME + " WHERE " + CurriculoContract.Categoria.COLUMN_TITULO + "= ?";
         String[] queryArgs = {cat};
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, queryArgs);
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, queryArgs);
         String id = null;
 
         int idxID = cursor.getColumnIndexOrThrow(CurriculoContract.Categoria._ID);
         if (cursor.moveToFirst()) {
             id = cursor.getString(idxID);
         }
-
         cursor.close();
-        db.close();
 
         return id;
     }
@@ -76,8 +74,8 @@ public class CurriculoDBHelper  extends SQLiteOpenHelper {
     public String getCategoria(String id){
         String selectQuery = "SELECT " + CurriculoContract.Categoria.COLUMN_TITULO + " FROM " + CurriculoContract.Categoria.TABLE_NAME + " WHERE _ID = ?";
         String[] queryArgs = {id};
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, queryArgs);
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, queryArgs);
         String titulo = null;
 
         int idxTitulo = cursor.getColumnIndexOrThrow(CurriculoContract.Categoria.COLUMN_TITULO);
@@ -86,7 +84,6 @@ public class CurriculoDBHelper  extends SQLiteOpenHelper {
         }
 
         cursor.close();
-        db.close();
 
         return titulo;
     }

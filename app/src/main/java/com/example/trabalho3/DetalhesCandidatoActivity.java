@@ -39,6 +39,7 @@ public class DetalhesCandidatoActivity extends AppCompatActivity {
     };
 
     public static final int NOVA_PRODUCAO = 2;
+    public static final int NOVA_ATIVIDADE = 3;
 
 
     @Override
@@ -112,17 +113,16 @@ public class DetalhesCandidatoActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-//        adapter.setOnItemClickListener(new ProducaoAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View itemView, int position) {
-//                TextView txtID = (TextView) itemView.findViewById(R.id.textViewId);
-//                Intent intent = new Intent(DetalhesCandidatoActivity.this, DetalhesProducaoActivity.class);
-//                intent.putExtra("IDCandidato", txtID.getText().toString());
-//
-//                startActivityForResult(intent, NOVA_PRODUCAO);
-//
-//            }
-//        });
+        adapter.setOnItemClickListener(new ProducaoAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                TextView txtID = (TextView) itemView.findViewById(R.id.textIDProducao);
+                Intent intent = new Intent(DetalhesCandidatoActivity.this, DetalhesProducaoActivity.class);
+                intent.putExtra("IDProducao", txtID.getText().toString());
+                startActivityForResult(intent, NOVA_ATIVIDADE);
+
+            }
+        });
 
     }
 }

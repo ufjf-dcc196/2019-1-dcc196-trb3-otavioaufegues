@@ -28,10 +28,6 @@ public class NovaProducaoActivity extends AppCompatActivity {
 
         categoria.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, dbHelper.getCategorias()));
 
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, dbHelper.getCategorias());
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        categoria.setAdapter(adapter);
-
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +38,7 @@ public class NovaProducaoActivity extends AppCompatActivity {
                 values.put(CurriculoContract.Producao.COLUMN_TITULO, titulo.getText().toString());
                 values.put(CurriculoContract.Producao.COLUMN_DESCRICAO, descricao.getText().toString());
                 values.put(CurriculoContract.Producao.COLUMN_INICIO, dt_inicio.getText().toString());
-//                values.put(CurriculoContract.Producao.COLUMN_CATEGORIA, dbHelper.getCategoriaID(categoria.getSelectedItem().toString()));
+                values.put(CurriculoContract.Producao.COLUMN_CATEGORIA, dbHelper.getCategoriaID(categoria.getSelectedItem().toString()));
                 values.put(CurriculoContract.Producao.COLUMN_CANDIDATO, IDCandidato);
 
                 long id = db.insert(CurriculoContract.Producao.TABLE_NAME, null, values);

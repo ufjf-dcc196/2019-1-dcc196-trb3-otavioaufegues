@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHolder>  {
-
+    CurriculoDBHelper dbHelper;
     private Cursor cursor;
 
     public ProducaoAdapter(Cursor c) {
@@ -35,6 +35,8 @@ public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHo
     public ProducaoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
+        dbHelper = new CurriculoDBHelper(context);
+
         View producaoView = inflater.inflate(R.layout.producao_layout, parent, false);
         ViewHolder holder = new ViewHolder(producaoView);
         return holder;
@@ -43,6 +45,7 @@ public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ProducaoAdapter.ViewHolder holder, int position) {
+
         int idxID = cursor.getColumnIndexOrThrow(CurriculoContract.Producao._ID);
         int idxTitulo = cursor.getColumnIndexOrThrow(CurriculoContract.Producao.COLUMN_TITULO);
         int idxDescricao = cursor.getColumnIndexOrThrow(CurriculoContract.Producao.COLUMN_DESCRICAO);
@@ -54,7 +57,7 @@ public class ProducaoAdapter extends RecyclerView.Adapter<ProducaoAdapter.ViewHo
         holder.itemID.setText(cursor.getString(idxID));
         holder.itemTitulo.setText(cursor.getString(idxTitulo));
         holder.itemDescricao.setText(cursor.getString(idxDescricao));
-        holder.itemCategoria.setText(cursor.getString(idxCategoria));
+        holder.itemCategoria.setText(dbHelper.getCategoria(cursor.getString(idxCategoria)));
         holder.itemInicio.setText(cursor.getString(idxDtInicio));
     }
 

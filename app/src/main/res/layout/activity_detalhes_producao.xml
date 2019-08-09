@@ -7,4 +7,100 @@
         android:layout_height="match_parent"
         tools:context=".DetalhesProducaoActivity">
 
+    <EditText
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/editAltDescProd" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="108dp"/>
+    <TextView
+            android:text="Produção"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView19" android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:textSize="24sp" app:layout_constraintHorizontal_bias="0.563"/>
+    <TextView
+            android:text="Título"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView34"
+            app:layout_constraintEnd_toEndOf="@+id/textView35" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="78dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="46dp" android:layout_marginStart="46dp"/>
+    <TextView
+            android:text="Descrição"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView35"
+            app:layout_constraintEnd_toEndOf="@+id/textView36" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="124dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="19dp" android:layout_marginStart="19dp"/>
+    <TextView
+            android:text="Data Inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView36"
+            app:layout_constraintEnd_toEndOf="@+id/textView37" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="169dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="15dp" android:layout_marginStart="15dp"/>
+    <TextView
+            android:text="Categoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView37" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="215dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="21dp" android:layout_marginStart="21dp"/>
+    <EditText
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/editAltDtInicioProd"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="152dp" android:layout_marginEnd="16dp" android:layout_marginRight="16dp"/>
+    <EditText
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/editAltTituloProd"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="63dp"/>
+    <Spinner
+            android:layout_width="292dp"
+            android:layout_height="41dp"
+            android:id="@+id/spinnerAltCatProd"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="205dp" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp" app:layout_constraintEnd_toEndOf="parent"/>
+    <View
+            android:id="@+id/divider4"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="266dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="395dp"
+            android:layout_height="448dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="275dp" android:id="@+id/ListaAtividades"/>
+    <Button
+            android:text="Salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/buttonSalvarAltProducao"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="4dp"/>
+    <Button
+            android:text="Nova Atividade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/buttonNovaAtividade"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="7dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
